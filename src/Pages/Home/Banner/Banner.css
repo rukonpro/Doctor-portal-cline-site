@@ -1,0 +1,9 @@
+.banner-bg {
+    /* background-image: url(../../../images/bg.png); */
+    background-image: linear-gradient(#3A4256, #3A4256), url(../../../images/bg.png);
+    background-position: right, left;
+    background-repeat: no-repeat, repeat;
+    height: inherit;
+    background-size: 30%, 70%;
+    background-size: unset, cover;
+}

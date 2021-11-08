@@ -1,0 +1,7 @@
+.contact-us-container {
+    background-image: url(../../../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #41485C;
+    background-blend-mode: darken, luminosity;
+}

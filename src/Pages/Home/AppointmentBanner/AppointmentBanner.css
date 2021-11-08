@@ -1,0 +1,6 @@
+.AppointmentBg {
+    background-image: url(../../../images/appointment-bg.png);
+    margin-top: 200px;
+    background-color: rgba(0, 69, 98, 0.734);
+    background-blend-mode: darken, luminosity;
+}

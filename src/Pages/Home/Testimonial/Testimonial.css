@@ -1,0 +1,6 @@
+.testimonial-container {
+    background-image: url(../../../images/test-bg.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 20%;
+}

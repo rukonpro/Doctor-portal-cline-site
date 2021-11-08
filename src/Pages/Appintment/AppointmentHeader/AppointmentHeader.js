@@ -1,0 +1,25 @@
+import React from 'react';
+import { Container, Grid } from '@mui/material';
+import chair from '../../../images/chair.png'
+import Calendar from '../../Sheard/Calendar/Calendar';
+const AppointmentHeader = ({ date, setDate }) => {
+
+    return (
+        <div>
+            <h1>Appointment heder</h1>
+            <Container>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <Calendar data={date} setDate={setDate} />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <img style={{ width: '100%' }} src={chair} alt="" />
+                    </Grid>
+
+                </Grid>
+            </Container>
+        </div>
+    );
+};
+
+export default AppointmentHeader;
