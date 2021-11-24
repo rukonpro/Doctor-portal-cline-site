@@ -11,7 +11,7 @@ import useAuth from '../../../Hooks/useAuth';
 const BookingModal = ({ bookingOpen, handleBookingCloseModal, booking, date, setBookingSuccess }) => {
 
     const { user } = useAuth();
-    const { name, time } = booking;
+    const { name, time, price } = booking;
     const initialInfo = { patientName: user.displayName, email: user.email, phone: '' }
     const [bookingInfo, setBookingInfo] = useState(initialInfo);
 
@@ -28,6 +28,7 @@ const BookingModal = ({ bookingOpen, handleBookingCloseModal, booking, date, set
         const appointment = {
             ...bookingInfo,
             time,
+            price,
             serviceName: name,
             date: date.toLocaleDateString()
         }

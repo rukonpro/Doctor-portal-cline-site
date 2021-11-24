@@ -49,6 +49,7 @@ const ContactUs = () => {
                         // label="Subject"
                         id="outlined-size-small"
                         // defaultValue="Subject"
+                        placeholder="Subject"
                         size="small"
                     />
                     <TextField

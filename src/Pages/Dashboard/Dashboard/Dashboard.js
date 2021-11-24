@@ -6,19 +6,18 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AddModeratorIcon from '@mui/icons-material/AddModerator';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import HomeIcon from '@mui/icons-material/Home';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 import {
     Switch,
     Route,
@@ -32,28 +31,40 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddDoctor from '../AddDoctor/AddDoctor';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../AdminRoute/AdminRoute';
+import Payment from '../Payment/Payment';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin } = useAuth();
+    const { admin, user, logout } = useAuth();
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
     let { path, url } = useRouteMatch();
+
+
+
     const drawer = (
         <div>
             <Toolbar />
             <Divider />
 
             <List>
+
+                <Link to='/' style={{ textDecoration: 'none' }} >
+                    <ListItem button sx={{ color: 'white' }} >
+                        <HomeIcon
+                            sx={{ mr: 3 }} />
+                        Home
+                    </ListItem>
+                </Link>
                 <Link to='/appointment' style={{ textDecoration: 'none' }} >
-                    <ListItem button >
-
-                        <MenuBookIcon sx={{ mr: 3, color: 'gray' }} /> <Typography sx={{ display: 'inline', color: 'black' }}>Appointment</Typography>
-
+                    <ListItem button sx={{ color: 'white' }} >
+                        <MenuBookIcon
+                            sx={{ mr: 3 }} />
+                        Appointment
                     </ListItem>
                 </Link>
 
@@ -63,39 +74,39 @@ function Dashboard(props) {
                     admin &&
                     <Box>
                         <Link to={`${url}`} style={{ textDecoration: 'none' }} >
-                            <ListItem button >
+                            <ListItem button sx={{ color: 'white' }}>
 
-                                <DashboardIcon sx={{ mr: 3, color: 'gray' }} /> <Typography sx={{ display: 'inline', color: 'black' }}>Dashboard</Typography>
+                                <DashboardIcon sx={{ mr: 3 }} /> Dashboard
 
                             </ListItem>
                         </Link>
                         <Link exact to={`${url}/makeAdmin`} style={{ textDecoration: 'none' }} >
-                            <ListItem button >
+                            <ListItem button sx={{ color: 'white' }}>
 
-                                <AdminPanelSettingsIcon sx={{ mr: 3, color: 'gray' }} /> <Typography sx={{ display: 'inline', color: 'black' }}>Make Admin</Typography>
+                                <AdminPanelSettingsIcon sx={{ mr: 3 }} /> Make Admin
 
                             </ListItem>
                         </Link>
 
                         <Link exact to={`${url}/addDoctor`} style={{ textDecoration: 'none' }} >
-                            <ListItem button >
+                            <ListItem button sx={{ color: 'white' }}>
 
-                                <AddModeratorIcon sx={{ mr: 3, color: 'gray' }} /> <Typography sx={{ display: 'inline', color: 'black' }}>Add Doctors</Typography>
+                                <AddModeratorIcon sx={{ mr: 3 }} /> Add Doctors
 
                             </ListItem>
                         </Link>
                     </Box>
                 }
 
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
+                {
+                    user.email && <List>
 
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                        <ListItem button onClick={logout} sx={{ color: 'white', fontWeight: 'bold' }}>
+                            <LogoutIcon sx={{ mr: 3 }} />
+                            Logout
+                        </ListItem>
+                    </List>
+                }
             </List>
 
         </div>
@@ -135,6 +146,12 @@ function Dashboard(props) {
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Drawer
+                    PaperProps={{
+                        sx: {
+                            backgroundColor: "rgb(25, 118, 210)",
+                            color: "white"
+                        }
+                    }}
                     container={container}
                     variant="temporary"
                     open={mobileOpen}
@@ -150,6 +167,12 @@ function Dashboard(props) {
                     {drawer}
                 </Drawer>
                 <Drawer
+                    PaperProps={{
+                        sx: {
+                            backgroundColor: "rgb(25, 118, 210)",
+                            color: "white"
+                        }
+                    }}
                     variant="permanent"
                     sx={{
                         display: { xs: 'none', sm: 'block' },
@@ -169,10 +192,13 @@ function Dashboard(props) {
                     <Route exact path={path}>
                         <DashboardHome />
                     </Route>
-                    <AdminRoute exact path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
+                    <Route path={`${path}/makeAdmin`}>
+                        <MakeAdmin />
+                    </Route>
+                    <AdminRoute path={`${path}/payment/:appointmentId`}>
+                        <Payment></Payment>
                     </AdminRoute>
-                    <AdminRoute exact path={`${path}/addDoctor`}>
+                    <AdminRoute path={`${path}/addDoctor`}>
                         <AddDoctor></AddDoctor>
                     </AdminRoute>
 

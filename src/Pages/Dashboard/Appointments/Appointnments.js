@@ -8,7 +8,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 const Appointments = ({ date }) => {
     const { user, token } = useAuth();
     const [appointments, setAppointments] = useState([])
@@ -51,7 +52,9 @@ const Appointments = ({ date }) => {
                                     {row?.patientName}
                                 </TableCell>
                                 <TableCell align="center">{row.time}</TableCell>
-                                <TableCell align="center">Action</TableCell>
+                                {/* <TableCell align="center">{row.payment ? 'payed' : <link to='/'>Link</link>}</TableCell> */}
+                                <TableCell align="center">{row.payed ? 'payed' : <Link to={`/dashboard/payment/${row._id}`}><Button>Pay</Button></Link>}</TableCell>
+
 
                             </TableRow>
                         ))}
