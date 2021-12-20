@@ -16,7 +16,7 @@ const CheckOutFrom = ({ appointment }) => {
 
     useEffect(() => {
         console.log('inside request')
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://limitless-shore-42333.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +84,7 @@ const CheckOutFrom = ({ appointment }) => {
                 created: paymentIntent.created,
                 last4: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `http://localhost:5000/appointments/${_id}`;
+            const url = `https://limitless-shore-42333.herokuapp.com/appointments/${_id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

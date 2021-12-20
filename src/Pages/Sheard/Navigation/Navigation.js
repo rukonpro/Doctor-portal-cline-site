@@ -71,7 +71,7 @@ const Navigation = () => {
             <Divider />
             <List>
                 <Link to='/' className={sidebarListItem}>
-                    <ListItem button  >
+                    <ListItem button sx={{ textDecoration: 'none !impotent' }} >
                         <HomeIcon />
                         Home
 
@@ -128,21 +128,21 @@ const Navigation = () => {
                             <NavLink to='/' className={sidebarListItem}>Doctors Portal</NavLink>
                         </Typography>
                         <Toolbar className={menuItem}>
-                            <Link to='/'>
+                            <Link style={{ textDecoration: 'none' }} to='/'>
                                 <Button style={{ color: 'white' }}>Home</Button>
                             </Link>
-                            <Link to='/appointment'>
+                            <Link style={{ textDecoration: 'none' }} to='/appointment'>
                                 <Button style={{ color: 'white' }}>Appointment</Button>
                             </Link>
                             {
                                 user?.email ?
                                     <Box>
-                                        <Link to='/dashboard'><Button style={{ color: 'white' }}>Dashboard</Button></Link>
+                                        <Link style={{ textDecoration: 'none' }} to='/dashboard'><Button style={{ color: 'white' }}>Dashboard</Button></Link>
                                         <Button onClick={logout} style={{ color: 'white' }}>Logout</Button>
                                     </Box>
                                     :
 
-                                    <Link to='/login'><Button style={{ color: 'white' }}>Login</Button></Link>
+                                    <Link style={{ textDecoration: 'none' }} to='/login'><Button style={{ color: 'white' }}>Login</Button></Link>
                             }
                         </Toolbar>
                     </Toolbar>
