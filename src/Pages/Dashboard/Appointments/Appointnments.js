@@ -52,7 +52,6 @@ const Appointments = ({ date }) => {
                                     {row?.patientName}
                                 </TableCell>
                                 <TableCell align="center">{row.time}</TableCell>
-                                {/* <TableCell align="center">{row.payment ? 'payed' : <link to='/'>Link</link>}</TableCell> */}
                                 <TableCell align="center">{row.payed ? 'payed' : <Link to={`/dashboard/payment/${row._id}`}><Button>Pay</Button></Link>}</TableCell>
 
 

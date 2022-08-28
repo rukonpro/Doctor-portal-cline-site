@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import chair from '../../../images/chair.png'
 import Calendar from '../../Sheard/Calendar/Calendar';
 const AppointmentHeader = ({ date, setDate }) => {
 
     return (
-        <div>
+        <Box sx={{ pt:10}}>
             <Typography variant="h4" sx={{ textAlign: 'center', py: 5, fontWeight: 'bold', textDecorationLine: 'underline' }}>
                 Appointment
             </Typography>
@@ -20,7 +20,7 @@ const AppointmentHeader = ({ date, setDate }) => {
 
                 </Grid>
             </Container>
-        </div>
+        </Box>
     );
 };
 

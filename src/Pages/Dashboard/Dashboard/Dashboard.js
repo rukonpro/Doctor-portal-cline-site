@@ -121,7 +121,7 @@ function Dashboard(props) {
                 position="fixed"
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
+                    ml: { sm: `${drawerWidth}px` },bgcolor:"#3a4256"
                 }}
             >
                 <Toolbar>
@@ -148,7 +148,7 @@ function Dashboard(props) {
                 <Drawer
                     PaperProps={{
                         sx: {
-                            backgroundColor: "rgb(25, 118, 210)",
+                            backgroundColor: "#424b62",
                             color: "white"
                         }
                     }}
@@ -169,7 +169,7 @@ function Dashboard(props) {
                 <Drawer
                     PaperProps={{
                         sx: {
-                            backgroundColor: "rgb(25, 118, 210)",
+                            backgroundColor: "#424b62",
                             color: "white"
                         }
                     }}

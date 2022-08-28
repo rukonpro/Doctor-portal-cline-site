@@ -24,7 +24,11 @@ const BookingModal = ({ bookingOpen, handleBookingCloseModal, booking, date, set
         setBookingInfo(newInfo)
     }
     const handleBooking = (e) => {
-
+        e.preventDefault();
+        if (!user.email) {
+            alert("Please before do login,then try again!")
+            return
+        }
         const appointment = {
             ...bookingInfo,
             time,
@@ -49,7 +53,7 @@ const BookingModal = ({ bookingOpen, handleBookingCloseModal, booking, date, set
             })
 
 
-        e.preventDefault()
+       
 
     }
 

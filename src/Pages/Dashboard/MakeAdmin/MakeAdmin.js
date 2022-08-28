@@ -1,4 +1,4 @@
-import { Alert, Button, Container, TextField, Typography } from '@mui/material';
+import { Alert, Button, Container, Paper, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -28,24 +28,28 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <Container>
-            <Typography sx={{ textAlign: "center" }} variant="h4">
-                Make Admin
-            </Typography>
+        <Container sx={{display:'flex',justifyContent:'center',alignItems:'center' ,height:'80vh'}}>
+            <Paper sx={{ maxWidth: 400,p:10 }}>
+                <Typography sx={{ textAlign: "center" }} variant="h4">
+                    Make Admin
+                </Typography>
 
-            {
-                success &&
-                <Alert severity="success">Admin add Success</Alert>
-            }
+                {
+                    success &&
+                    <Alert severity="success">Admin add Success</Alert>
+                }
 
-            <form onSubmit={handleAddAdmin}>
-                <TextField
-                    label="Email"
-                    type="email"
-                    onBlur={emailOnBlur}
-                    variant="standard" />
-                <Button type='submit' variant="contained">Add Admin</Button>
-            </form>
+                <form onSubmit={handleAddAdmin}>
+                    <TextField
+                        label="Email"
+                        type="email"
+                        fullWidth
+                        onBlur={emailOnBlur}
+                        variant="standard" />
+                    <br />
+                    <Button type='submit' sx={{mt:2}} fullWidth variant="contained">Add Admin</Button>
+                </form>
+            </Paper>
         </Container>
     );
 };

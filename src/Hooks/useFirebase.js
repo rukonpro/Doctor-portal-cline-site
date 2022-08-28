@@ -152,13 +152,15 @@ const useFirebase = () => {
     // get admin ============================
     useEffect(() => {
 
+        // setIsLoading(true)
         fetch(`https://limitless-shore-42333.herokuapp.com/users/${user.email}`)
-            // setIsLoading(true)
             .then(res => res.json())
             .then(data => {
 
                 setAdmin(data.admin)
-            }).finally(() => {
+            })
+            .catch(err => console.log(err))
+            .finally(() => {
                 // setIsLoading(false)
             })
     }, [user.email])

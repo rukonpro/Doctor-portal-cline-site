@@ -6,33 +6,11 @@ import people1 from '../../../images/people-1.png';
 import people2 from '../../../images/people-2.png';
 import people3 from '../../../images/people-3.png';
 
-const testimonials = [
-    {
-        id: 1,
-        name: 'Winson Herry',
-        img: people1,
-        title: 'Cailifornia',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus est vero iusto officia asperiores consequatur, vel iste aspernatur ipsa adipisci iure quo dolores. Exercitationem, repellat ea? Enim, ipsam voluptatibus!'
-    },
-    {
-        id: 2,
-        name: 'Winson Herry',
-        img: people2,
-        title: 'Cailifornia',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus est vero iusto officia asperiores consequatur, vel iste aspernatur ipsa adipisci iure quo dolores. Exercitationem, repellat ea? Enim, ipsam voluptatibus!'
-    },
-    {
-        id: 3,
-        name: 'Winson Herry',
-        img: people3,
-        title: 'Cailifornia',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus est vero iusto officia asperiores consequatur, vel iste aspernatur ipsa adipisci iure quo dolores. Exercitationem, repellat ea? Enim, ipsam voluptatibus!'
-    },
-]
+
 
 const Testimonial = () => {
     return (
-        <Container className='testimonial-container'>
+        <Container className='testimonial-container' sx={{mb:10}}>
             <Typography variant="h6" sx={{ color: 'rgb(0, 255, 195)', pt: 6 }}>
                 Testimonial
             </Typography>
@@ -43,8 +21,8 @@ const Testimonial = () => {
             <Box>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {
-                        testimonials.map(testimonial =>
-                            <Grid item xs={12} sm={4} md={4} key={testimonial.id}>
+                        testimonials.map((testimonial,index) =>
+                            <Grid item xs={12} sm={4} md={4} key={index}>
                                 <Box
                                     sx={{
 
@@ -89,5 +67,30 @@ const Testimonial = () => {
         </Container>
     );
 };
+
+
+const testimonials = [
+    {
+        id: 1,
+        name: 'Winson Herry',
+        img: people1,
+        title: 'Cailifornia',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus est vero iusto officia asperiores consequatur, vel iste aspernatur ipsa adipisci iure quo dolores. Exercitationem, repellat ea? Enim, ipsam voluptatibus!'
+    },
+    {
+        id: 2,
+        name: 'Winson Herry',
+        img: people2,
+        title: 'Cailifornia',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus est vero iusto officia asperiores consequatur, vel iste aspernatur ipsa adipisci iure quo dolores. Exercitationem, repellat ea? Enim, ipsam voluptatibus!'
+    },
+    {
+        id: 3,
+        name: 'Winson Herry',
+        img: people3,
+        title: 'Cailifornia',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus est vero iusto officia asperiores consequatur, vel iste aspernatur ipsa adipisci iure quo dolores. Exercitationem, repellat ea? Enim, ipsam voluptatibus!'
+    },
+]
 
 export default Testimonial;

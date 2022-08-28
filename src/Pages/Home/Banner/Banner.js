@@ -4,6 +4,7 @@ import chair from '../../../images/chair.png'
 import { Button, CardMedia, Container, Typography } from '@mui/material';
 import './Banner.css';
 import { Box } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -25,7 +26,7 @@ const Banner = () => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea similique sunt temporibus laborum eligendi doloribus!
 
                         </Typography>
-                        <Button className="feature-button" variant="contained">Get Appointment</Button>
+                        <Link style={{ textDecoration: 'none' }} to="/appointment"> <Button className="feature-button" variant="contained">Get Appointment</Button></Link>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <CardMedia

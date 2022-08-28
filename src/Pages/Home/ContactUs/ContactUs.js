@@ -1,17 +1,27 @@
-import React from 'react';
-import './ContactUs.css'
+import React, { useRef } from 'react';
 import { Button, Container, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-
+import emailjs from 'emailjs-com';
+import './ContactUs.css'
 const ContactUs = () => {
-
-    const handleSendMassage = (e) => {
+    const form = useRef();
+    const handlerSendMassage = (e) => {
         e.preventDefault();
+        emailjs.sendForm('service_zdrtp9b', 'template_n1ub0zc', form.current, 'user_sMNanZ38ggdHIXPN6PNqZ')
+            .then((result) => {
+                console.log(result)
+            }, (error) => {
+                console.log(error.text);
+            });
+            e.target.reset();
+            alert("Send massage success")
     }
+
     return (
         <Box className="contact-us-container">
+
             <Container
-                component="form"
+
                 sx={{
                     '& .MuiTextField-root': { m: 1, width: '80%' },
                     textAlign: 'center'
@@ -26,7 +36,9 @@ const ContactUs = () => {
                 <Typography sx={{ color: '#fff', pb: 2 }} variant="h4">
                     Always Connect with us
                 </Typography>
-                <form onSubmit={handleSendMassage}>
+
+
+                <form ref={form} onSubmit={handlerSendMassage}>
                     <TextField
                         sx={{
                             backgroundColor: 'white',
@@ -34,9 +46,9 @@ const ContactUs = () => {
                             borderRadius: 1
                         }}
                         required
-                        placeholder="Email"
+                        type='name'
+                        placeholder="Name"
                         id="outlined-size-small"
-                        // defaultValue="Email"
                         size="small"
                     />
                     <TextField
@@ -46,9 +58,21 @@ const ContactUs = () => {
                             borderRadius: 1
                         }}
                         required
-                        // label="Subject"
+                        type='email'
+                        placeholder="Email"
                         id="outlined-size-small"
-                        // defaultValue="Subject"
+                        size="small"
+                    />
+                    <TextField
+                        sx={{
+                            backgroundColor: 'white',
+                            borderStyle: 'none',
+                            borderRadius: 1
+                        }}
+                        required
+                        type="text"
+                        id="outlined-size-small"
+                        defaultValue="Subject"
                         placeholder="Subject"
                         size="small"
                     />
@@ -60,14 +84,14 @@ const ContactUs = () => {
                         }}
                         required
                         id="outlined-multiline-static"
-                        // label="Massage"
                         multiline
+                        type="text"
                         rows={4}
                         defaultValue="Your Massage"
                     />
                     <br />
 
-                    <Button variant="contained" type="submit" sx={{ my: 2, color: 'white' }} className="feature-button">SUBMIT</Button>
+                    <Button variant="contained" type="submit" sx={{ my: 2, color: 'white' }} className="feature-button">Send Massage</Button>
 
                 </form>
 

@@ -111,7 +111,7 @@ const Navigation = () => {
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={{ position: 'fixed', zIndex: 100 }}>
+                <AppBar position="static" sx={{ position: 'fixed', zIndex: 100,bgcolor:'#3a4256'}} >
                     <Toolbar>
                         <IconButton
                             className={menuIcon}

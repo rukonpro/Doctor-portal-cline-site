@@ -88,47 +88,55 @@ const Footer = () => {
                             Yards
                         </Typography>
                         <Box sx={{ my: 2 }}>
-                            <FacebookOutlinedIcon
-                                sx={{
-                                    p: 1, border: '2px solid #00FFC3',
-                                    borderRadius: 50,
-                                    color: '#fff',
-                                    backgroundColor: '#12D0D8',
+                            <a href="https://www.facebook.com/JsRukon" target="_blank" alt="" rel="noopener noreferrer">
+                                <FacebookOutlinedIcon
+                                    sx={{
+                                        p: 1, border: '2px solid #00FFC3',
+                                        borderRadius: 50,
+                                        color: '#fff',
+                                        backgroundColor: '#12D0D8',
 
-                                }}>
+                                    }}>
 
-                            </FacebookOutlinedIcon>
-                            <GoogleIcon
-                                sx={{
-                                    p: 1, border: '2px solid #00FFC3',
-                                    borderRadius: 50,
-                                    color: '#12D0D8',
-                                    mx: 5
-                                }}>
-
-
-                            </GoogleIcon>
-                            <TwitterIcon
-                                sx={{
-                                    p: 1, border: '2px solid #00FFC3',
-                                    borderRadius: 50,
-                                    color: '#12D0D8'
-                                }}>
+                                </FacebookOutlinedIcon>
+                            </a>
+                            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+                                <GoogleIcon
+                                    sx={{
+                                        p: 1, border: '2px solid #00FFC3',
+                                        borderRadius: 50,
+                                        color: '#12D0D8',
+                                        mx: 5
+                                    }}>
 
 
-                            </TwitterIcon>
+                                </GoogleIcon>
+                            </a>
+
+                            <a href="https://twitter.com/rukon_js" target="_blank" rel="noopener noreferrer">
+
+                                <TwitterIcon
+                                    sx={{
+                                        p: 1, border: '2px solid #00FFC3',
+                                        borderRadius: 50,
+                                        color: '#12D0D8'
+                                    }}>
+
+
+                                </TwitterIcon>
+                            </a>
                         </Box>
                         <Box>
                             <Typography>
                                 Call Now
                             </Typography>
-                            <Button className="feature-button">+2025500165</Button>
+                          <a href="tel:+8801765459224">  <Button className="feature-button">+8801765459224</Button></a>
                         </Box>
                     </Grid>
                 </Grid>
                 <Box>
                     <Typography sx={{ fontSize: 15, py: 10 }} variant="h6">
-                        CopyRight 2021 all Right Reserved
+                        CopyRight {new Date().getFullYear()} all Right Reserved
                     </Typography>
                 </Box>
             </Container>
