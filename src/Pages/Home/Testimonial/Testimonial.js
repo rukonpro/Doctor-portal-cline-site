@@ -23,7 +23,7 @@ const Testimonial = () => {
                     {
                         testimonials.map((testimonial,index) =>
                             <Grid item xs={12} sm={4} md={4} key={index}>
-                                <Box
+                                <Paper
                                     sx={{
 
                                         display: 'flex',
@@ -34,7 +34,7 @@ const Testimonial = () => {
                                         },
                                     }}
                                 >
-                                    <Paper elevation={1}
+                                    <Box
                                         sx={{ p: 3 }}
                                     >
                                         <Typography variant="p" sx={{ color: 'gray', fontWeight: 'bold' }}>
@@ -54,9 +54,9 @@ const Testimonial = () => {
                                                 </Typography>
                                             </Grid>
                                         </Grid>
-                                    </Paper>
+                                    </Box>
 
-                                </Box>
+                                </Paper>
                             </Grid>
 
                         )

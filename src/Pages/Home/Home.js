@@ -12,7 +12,7 @@ import Testimonial from './Testimonial/Testimonial';
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Navigation />
             <Banner />
             <Contact />
@@ -23,7 +23,7 @@ const Home = () => {
             <Testimonial />
             <ContactUs />
             <Footer />
-        </div>
+        </>
     );
 };
 

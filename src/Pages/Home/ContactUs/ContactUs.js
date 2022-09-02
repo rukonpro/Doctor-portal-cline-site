@@ -18,7 +18,7 @@ const ContactUs = () => {
     }
 
     return (
-        <Box className="contact-us-container">
+        <Box className="contact-us-container" sx={{py:5}}>
 
             <Container
 
@@ -30,21 +30,17 @@ const ContactUs = () => {
                 autoComplete="off"
             >
 
-                <Typography sx={{ color: 'rgb(0, 255, 195)', py: 2 }} variant="h5">
+                <Typography sx={{ color: 'rgb(0, 255, 195)'}} variant="h5">
                     Contact
                 </Typography>
-                <Typography sx={{ color: '#fff', pb: 2 }} variant="h4">
+                <Typography sx={{  pb: 1 }} variant="h4">
                     Always Connect with us
                 </Typography>
 
 
                 <form ref={form} onSubmit={handlerSendMassage}>
                     <TextField
-                        sx={{
-                            backgroundColor: 'white',
-                            borderStyle: 'none',
-                            borderRadius: 1
-                        }}
+                       variant="filled"
                         required
                         type='name'
                         placeholder="Name"
@@ -52,11 +48,8 @@ const ContactUs = () => {
                         size="small"
                     />
                     <TextField
-                        sx={{
-                            backgroundColor: 'white',
-                            borderStyle: 'none',
-                            borderRadius: 1
-                        }}
+                       
+                        variant="filled"
                         required
                         type='email'
                         placeholder="Email"
@@ -64,11 +57,7 @@ const ContactUs = () => {
                         size="small"
                     />
                     <TextField
-                        sx={{
-                            backgroundColor: 'white',
-                            borderStyle: 'none',
-                            borderRadius: 1
-                        }}
+                     variant="filled"
                         required
                         type="text"
                         id="outlined-size-small"
@@ -77,11 +66,7 @@ const ContactUs = () => {
                         size="small"
                     />
                     <TextField
-                        sx={{
-                            backgroundColor: 'white',
-                            borderStyle: 'none',
-                            borderRadius: 1
-                        }}
+                      variant="filled"
                         required
                         id="outlined-multiline-static"
                         multiline

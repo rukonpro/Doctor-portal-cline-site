@@ -32,6 +32,8 @@ import AddDoctor from '../AddDoctor/AddDoctor';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import Payment from '../Payment/Payment';
+import { ThemeChange } from '../../../Themes/Theme';
+
 
 const drawerWidth = 240;
 
@@ -137,6 +139,7 @@ function Dashboard(props) {
                     <Typography variant="h6" noWrap component="div">
                         Dashboard
                     </Typography>
+                    <ThemeChange/>
                 </Toolbar>
             </AppBar>
             <Box
@@ -148,7 +151,7 @@ function Dashboard(props) {
                 <Drawer
                     PaperProps={{
                         sx: {
-                            backgroundColor: "#424b62",
+                            bgcolor: "#424b62",
                             color: "white"
                         }
                     }}
@@ -169,7 +172,7 @@ function Dashboard(props) {
                 <Drawer
                     PaperProps={{
                         sx: {
-                            backgroundColor: "#424b62",
+                            bgcolor: "#424b62",
                             color: "white"
                         }
                     }}

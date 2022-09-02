@@ -19,6 +19,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
+import { ThemeChange } from '../../../Themes/Theme';
+
 const Navigation = () => {
     const { user, logout } = useAuth();
     const theme = useTheme();
@@ -105,13 +107,14 @@ const Navigation = () => {
                             </ListItem>
                         </Link>
                 }
+                <ThemeChange />
             </List>
         </Box>
     );
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={{ position: 'fixed', zIndex: 100,bgcolor:'#3a4256'}} >
+                <AppBar position="static" sx={{ position: 'fixed', zIndex: 100, bgcolor: '#3a4256' }} >
                     <Toolbar>
                         <IconButton
                             className={menuIcon}
@@ -144,6 +147,7 @@ const Navigation = () => {
 
                                     <Link style={{ textDecoration: 'none' }} to='/login'><Button style={{ color: 'white' }}>Login</Button></Link>
                             }
+                            <ThemeChange />
                         </Toolbar>
                     </Toolbar>
                 </AppBar>
@@ -157,8 +161,8 @@ const Navigation = () => {
 
                         PaperProps={{
                             sx: {
-                                backgroundColor: "rgb(25, 118, 210)",
-                                color: "orange"
+                                bgcolor: "#3a4256",
+                               
                             }
                         }}
                         open={state}
