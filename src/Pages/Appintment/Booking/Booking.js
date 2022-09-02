@@ -27,7 +27,7 @@ const Booking = ({ booking, date, setDate, setBookingSuccess }) => {
     useEffect(() => {
 
         try {
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://limitless-shore-42333.herokuapp.com/bookings/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

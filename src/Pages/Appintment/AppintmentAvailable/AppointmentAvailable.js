@@ -10,7 +10,7 @@ const AppointmentAvailable = ({ date, setDate }) => {
     const [bookings, setBookings,] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/bookings")
+        fetch("https://limitless-shore-42333.herokuapp.com/bookings")
             .then(res => res.json())
             .then(data => setBookings(data))
             .catch(err => console.log(err))
