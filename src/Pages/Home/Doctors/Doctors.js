@@ -4,7 +4,7 @@ import { Grid, Typography, Box, Skeleton, Container, CardActionArea, Card, CardM
 const Doctors = () => {
     const [doctors, setDoctors] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/doctors')
+        fetch('https://limitless-shore-42333.herokuapp.com/doctors')
             .then(res => res.json())
             .then(data => setDoctors(data))
             .catch(err => console.log(err))
