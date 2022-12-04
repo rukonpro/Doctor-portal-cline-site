@@ -106,7 +106,7 @@ const useFirebase = () => {
     // save user to database-------------
     const saveUsers = (email, displayName, method) => {
         const user = { email, displayName }
-        fetch('https://limitless-shore-42333.herokuapp.com/users', {
+        fetch('https://doctor-protal-server.onrender.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -153,7 +153,7 @@ const useFirebase = () => {
     useEffect(() => {
 
         // setIsLoading(true)
-        fetch(`https://limitless-shore-42333.herokuapp.com/users/${user.email}`)
+        fetch(`https://doctor-protal-server.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
 

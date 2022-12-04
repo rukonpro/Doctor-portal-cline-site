@@ -50,7 +50,7 @@ const AddDoctor = () => {
 
 
 
-        axios.post("https://limitless-shore-42333.herokuapp.com/doctors", formData)
+        axios.post("https://doctor-protal-server.onrender.com/doctors", formData)
             .then(res => {
                 if (res.data.insertedId) {
                     alert("Doctor upload successfully")
@@ -68,49 +68,49 @@ const AddDoctor = () => {
 
     return (
 
-        <Container sx={{display:'flex',justifyContent:'center',alignItems:'center' ,height:'80vh'}}>
+        <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' }}>
 
-                <Paper sx={{ maxWidth: 400,maxHeight:500, p: 5 }}>
-                    <Typography variant="h4">
-                        Add Doctor
-                    </Typography>
+            <Paper sx={{ maxWidth: 400, maxHeight: 500, p: 5 }}>
+                <Typography variant="h4">
+                    Add Doctor
+                </Typography>
 
-                    <form onSubmit={handleSubmit}>
-                        <TextField
-                            fullWidth
-                            required
-                            onChange={e => setName(e.target.value)}
-                            type="name"
-                            label="Name"
-                            variant="standard" /> <br />
-                        <TextField
-                            fullWidth
+                <form onSubmit={handleSubmit}>
+                    <TextField
+                        fullWidth
+                        required
+                        onChange={e => setName(e.target.value)}
+                        type="name"
+                        label="Name"
+                        variant="standard" /> <br />
+                    <TextField
+                        fullWidth
 
-                            onChange={e => setPhone(e.target.value)}
-                            type="number"
-                            required
-                            label="Phone"
-                            variant="standard" /> <br />
+                        onChange={e => setPhone(e.target.value)}
+                        type="number"
+                        required
+                        label="Phone"
+                        variant="standard" /> <br />
 
 
-                        <Input
-                            fullWidth
-                            accept="image/*"
-                            type="file"
-                            onChange={e => handleImgUpload(e.target.files[0])}
+                    <Input
+                        fullWidth
+                        accept="image/*"
+                        type="file"
+                        onChange={e => handleImgUpload(e.target.files[0])}
 
-                        /> <br /> <br />
-                        <Button
-                            fullWidth
+                    /> <br /> <br />
+                    <Button
+                        fullWidth
 
-                            variant="contained"
-                            type='submit'
+                        variant="contained"
+                        type='submit'
 
-                        >
-                            Submit
-                        </Button>
-                    </form>
-                </Paper>
+                    >
+                        Submit
+                    </Button>
+                </form>
+            </Paper>
 
         </Container>
     );

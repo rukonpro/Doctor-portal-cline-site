@@ -38,7 +38,7 @@ const BookingModal = ({ bookingOpen, handleBookingCloseModal, booking, date, set
         }
 
         // send to the server 
-        fetch('https://limitless-shore-42333.herokuapp.com/appointments', {
+        fetch('https://doctor-protal-server.onrender.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -53,7 +53,7 @@ const BookingModal = ({ bookingOpen, handleBookingCloseModal, booking, date, set
             })
 
 
-       
+
 
     }
 

@@ -4,13 +4,13 @@ import { Grid, Typography, Box, Skeleton, Container, CardActionArea, Card, CardM
 const Doctors = () => {
     const [doctors, setDoctors] = useState([]);
     useEffect(() => {
-        fetch('https://limitless-shore-42333.herokuapp.com/doctors')
+        fetch('https://doctor-protal-server.onrender.com/doctors')
             .then(res => res.json())
             .then(data => setDoctors(data))
             .catch(err => console.log(err))
     }, [])
 
-    
+
     return (
         <Container sx={{ textAlign: "center", py: 10 }}>
 
@@ -66,7 +66,7 @@ const Doctors = () => {
                     }
                 </Grid>
 
-               
+
             </Box>
             }
         </Container>

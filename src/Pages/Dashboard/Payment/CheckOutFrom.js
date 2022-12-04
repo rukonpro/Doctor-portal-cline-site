@@ -16,7 +16,7 @@ const CheckOutFrom = ({ appointment }) => {
 
     useEffect(() => {
         console.log('inside request')
-        fetch('https://limitless-shore-42333.herokuapp.com/create-payment-intent', {
+        fetch('https://doctor-protal-server.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +84,7 @@ const CheckOutFrom = ({ appointment }) => {
                 created: paymentIntent.created,
                 last4: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `https://limitless-shore-42333.herokuapp.com/appointments/${_id}`;
+            const url = `https://doctor-protal-server.onrender.com/appointments/${_id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

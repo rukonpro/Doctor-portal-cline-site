@@ -9,7 +9,7 @@ const Payment = () => {
     const { appointmentId } = useParams();
     const [appointment, setAppointment] = useState({});
     useEffect(() => {
-        fetch(`https://limitless-shore-42333.herokuapp.com/appointments/${appointmentId}`)
+        fetch(`https://doctor-protal-server.onrender.com/appointments/${appointmentId}`)
             .then(res => res.json())
             .then(data => setAppointment(data))
     }, [appointmentId])

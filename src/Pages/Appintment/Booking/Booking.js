@@ -4,7 +4,7 @@ import BookingModal from '../BookingModal/BookingModal';
 import Draggable from "react-draggable";
 
 const Booking = ({ booking, date, setDate, setBookingSuccess }) => {
-    const { name, time, price, space, _id, dragElement } = booking;
+    const { name, time, price, space, dragElement } = booking;
 
 
     const [bookingOpen, setBookingOpen] = React.useState(false);
@@ -12,22 +12,22 @@ const Booking = ({ booking, date, setDate, setBookingSuccess }) => {
     const handleBookingCloseModal = () => setBookingOpen(false);
 
 
-    const [id, setId] = useState("");
+    // const [id, setId] = useState("");
     const [x, setX] = useState(0)
     const [y, setY] = useState(0)
 
-    const handleChangeId = (id) => {
+    /* const handleChangeId = (id) => {
         setId(id);
 
-    }
+    } */
     const handleStop = async (event, dragElement) => {
         setX(dragElement.x)
         setY(dragElement.y)
     };
-    useEffect(() => {
+    /* useEffect(() => {
 
         try {
-            fetch(`https://limitless-shore-42333.herokuapp.com/bookings/${id}`, {
+            fetch(`https://doctor-protal-server.onrender.com/bookings/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,14 +39,14 @@ const Booking = ({ booking, date, setDate, setBookingSuccess }) => {
             console.log(error)
         }
     }, [id, x, y])
-
+ */
 
     return (
         <>
-            <Grid item xs={12} sm={6} md={4} onClick={() => handleChangeId(_id)} >
+            <Grid item xs={12} sm={6} md={4}  >
                 <Draggable
                     onStop={handleStop}
-                    defaultPosition={{ x: dragElement?.x, y: dragElement?.y }}
+
                 >
                     <Paper sx={{ p: 5 }} elevation={3} >
                         <Typography sx={{ color: 'secondary.main', fontWeight: '600' }} variant='h5' gutterBottom component='div'>

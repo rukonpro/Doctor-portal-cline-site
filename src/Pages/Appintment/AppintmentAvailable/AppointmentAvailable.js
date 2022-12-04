@@ -10,7 +10,7 @@ const AppointmentAvailable = ({ date, setDate }) => {
     const [bookings, setBookings,] = useState([]);
 
     useEffect(() => {
-        fetch("https://limitless-shore-42333.herokuapp.com/bookings")
+        fetch("https://doctor-protal-server.onrender.com/bookings")
             .then(res => res.json())
             .then(data => setBookings(data))
             .catch(err => console.log(err))
@@ -19,7 +19,7 @@ const AppointmentAvailable = ({ date, setDate }) => {
 
 
 
-  
+
 
     return (
         <Container style={{ textAlign: 'center', paddingBottom: "100px" }}>
@@ -39,7 +39,7 @@ const AppointmentAvailable = ({ date, setDate }) => {
                         setDate={setDate}
                         booking={booking}
                         setBookingSuccess={setBookingSuccess}
-                       
+
                     />)
                 }
             </Grid>

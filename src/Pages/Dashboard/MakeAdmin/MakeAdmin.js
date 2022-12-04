@@ -10,7 +10,7 @@ const MakeAdmin = () => {
 
     const handleAddAdmin = (e) => {
         const user = { email }
-        fetch('https://limitless-shore-42333.herokuapp.com/users/admin', {
+        fetch('https://doctor-protal-server.onrender.com/users/admin', {
             method: "PUT",
             headers: {
                 'authorization': `Bearer ${idToken}`,
@@ -28,8 +28,8 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <Container sx={{display:'flex',justifyContent:'center',alignItems:'center' ,height:'80vh'}}>
-            <Paper sx={{ maxWidth: 400,p:10 }}>
+        <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' }}>
+            <Paper sx={{ maxWidth: 400, p: 10 }}>
                 <Typography sx={{ textAlign: "center" }} variant="h4">
                     Make Admin
                 </Typography>
@@ -47,7 +47,7 @@ const MakeAdmin = () => {
                         onBlur={emailOnBlur}
                         variant="standard" />
                     <br />
-                    <Button type='submit' sx={{mt:2}} fullWidth variant="contained">Add Admin</Button>
+                    <Button type='submit' sx={{ mt: 2 }} fullWidth variant="contained">Add Admin</Button>
                 </form>
             </Paper>
         </Container>

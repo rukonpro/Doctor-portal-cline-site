@@ -14,7 +14,7 @@ const Appointments = ({ date }) => {
     const { user, token } = useAuth();
     const [appointments, setAppointments] = useState([])
     useEffect(() => {
-        const url = `https://limitless-shore-42333.herokuapp.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`;
+        const url = `https://doctor-protal-server.onrender.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`;
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
